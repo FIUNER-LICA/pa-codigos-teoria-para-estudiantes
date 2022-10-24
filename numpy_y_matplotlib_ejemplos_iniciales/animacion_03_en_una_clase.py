@@ -11,10 +11,6 @@ import matplotlib.animation as animation
 
 
 class Graficador:
-    '''
-    
-    '''
-    
     def __init__(self):
         self.X = None
         self.C = None

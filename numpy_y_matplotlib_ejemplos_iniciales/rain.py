@@ -26,8 +26,8 @@ def rain_update(frame):
     R["size"][i] = 0
     R["color"][i, 3] = 1
     
-    
-    R["color"][:,2] = [np.random.rand() for i in np.zeros(n)]
+    # R["color"][:,2] = 1
+    # R["color"][:,2] = [np.random.rand() for i in np.zeros(n)]
     # R["color"][:,1] = [np.random.rand() for i in np.zeros(n)]
     # R["color"][:,0] = [np.random.rand() for i in np.zeros(n)]
 

@@ -25,6 +25,11 @@ print(R["size"].shape) # cantidad de filas
 print(np.linspace(0, 1, n).shape)
 
 print(R["position"][24])
+print(R["position"][24, 1])
 print(R["size"][24])
 print(R["size"][24, 0])
 print(R["color"][24])
+
+
+
+
