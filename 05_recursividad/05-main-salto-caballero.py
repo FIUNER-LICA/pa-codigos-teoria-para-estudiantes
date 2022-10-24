@@ -68,7 +68,7 @@ def recorrido_del_caballero(n: int) -> list[list[int]]:
             if salto_del_caballo_auxiliar(tablero, (i, j), 1):
                 return tablero
             tablero[i][j] = 0
-    raise ValueError(f"Open Kight Tour cannot be performed on a board of size {n}")
+    raise ValueError(f"La gira el caballero no puede ser realizada en un tablero de tamaño {n}x{n}")
 
 
 if __name__ == "__main__":
