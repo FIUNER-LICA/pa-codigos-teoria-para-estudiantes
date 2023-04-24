@@ -68,22 +68,3 @@ otro_estudiante.set_nombre("Juan")
 
 print(otro_estudiante)
 otro_estudiante.carrera = "" # se lanza una excepcion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

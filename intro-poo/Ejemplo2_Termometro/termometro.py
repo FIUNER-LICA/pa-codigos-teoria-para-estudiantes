@@ -2,15 +2,15 @@
 """
 Created on Fri Mar 17 12:04:00 2023
 
-@author: DELL
+@author: jfi
+
+@author: dz
+
+Este es un ejemplo desarrollado en clases como un caso didáctico de composición.
+
 """
 
 import random
-
-
-
-
-
 
 class Sensor:
     """
@@ -18,7 +18,6 @@ class Sensor:
     """
     def sensar(self):
         return random.random()*5.0 
-
 
 class Conversor:
     """
@@ -29,8 +28,7 @@ class Conversor:
         resultado = 0.0
         resultado = -10 + p_voltaje*(100-(-10))/(5.0-0.0)
         return resultado
-        
-
+      
 class Termometro:
     def __init__(self):
         self.__sensor = Sensor()

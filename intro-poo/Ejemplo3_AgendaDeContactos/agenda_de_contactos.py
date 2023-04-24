@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Mar 17 12:28:50 2023
-
-@author: DELL
+@author: jfi
+@author: dz
+Este ejemplo se desarrolló en clases como un caso dicáctico para presentar composición y agregación.
 """
 
 class Contacto:
@@ -12,8 +13,7 @@ class Contacto:
         self.__nombre = p_nom
         self.__correo = p_correo
         Contacto.numero_de_contactos += 1
-        
-    
+   
 
     @property
     def nombre(self):
@@ -84,12 +84,3 @@ if __name__ == "__main__":
 
     print("el_contacto.numero_de_contactos:", 
            el_contacto.numero_de_contactos)
-   
-
-
-
-
-
-
-
-
