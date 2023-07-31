@@ -34,12 +34,10 @@ def tablero_completado(tablero: list[list[int]]) -> bool:
 
 
 def salto_del_caballo_auxiliar(
-    tablero: list[list[int]], pos: tuple[int, int], actual: int
-) -> bool:
+    tablero: list[list[int]], pos: tuple[int, int], actual: int) -> bool:
     """
     Función auxiliar para resolver el problema del salto del caballero.
     """
-
     if tablero_completado(tablero):
         return True
 
