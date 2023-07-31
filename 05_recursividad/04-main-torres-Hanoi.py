@@ -12,4 +12,6 @@ def moverTorre(altura,origen, destino, intermedio):
 def moverDisco(desde,hacia):
     print("mover disco de",desde,"a",hacia)
 
+# moverTorre(1,"A","B","C")
+# moverTorre(2,"A","B","C")
 moverTorre(3,"A","B","C")
