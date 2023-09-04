@@ -1,9 +1,3 @@
-# hack para importar desde directorio hermano
-from sys import path
-from os.path import dirname as dir
-path.append(dir(path[0]))
-
-
 # código de la prueba
 import unittest
 from poo.termometro import Termometro, Conversor
