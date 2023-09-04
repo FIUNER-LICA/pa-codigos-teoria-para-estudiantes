@@ -15,6 +15,7 @@ class TestTermometro(unittest.TestCase):
             temperatura = self.termometro.medirTemperatura()
             self.assertGreaterEqual(temperatura, -20)
             self.assertLessEqual(temperatura, 120)
+            # self.assertTrue(-20 <= temperatura <= 120)
 
     def test_el_termometro_tiene_un_conversor(self):
         self.assertIsInstance(self.termometro._Termometro__conversor, Conversor)

@@ -12,7 +12,7 @@ class Termometro:
     def __init__(self):
         self.__sensor = Sensor()
         self.__conversor = Conversor()
-
+        
     def medirTemperatura(self):
         voltaje = self.__sensor.sensar()
         temperatura = self.__conversor.convertir(voltaje)
