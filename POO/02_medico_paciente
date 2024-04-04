@@ -1,0 +1,41 @@
+class Medico:
+    def __init__(self):
+        self.__nombre = "S/N"
+        self.__pacientes = [] # lista de pacientes
+
+    def agregar_paciente(self, p_paciente):
+        '''
+        Método para agregar un paciente a la lista de pecientes
+        p_paciente: Paciente
+        '''
+        if p_paciente not in self.__pacientes:
+            self.__pacientes.append(p_paciente)
+            p_paciente.agregar_medico(self)
+
+
+class Paciente:
+    def __init__(self):
+        self.__nombre = "S/N"
+        self.__medicos = []  # lista de medicos
+
+    def agregar_medico(self, p_medico: Medico):
+        if p_medico not in self.__medicos:
+            self.__medicos.append(p_medico)
+            p_medico.agregar_paciente(self)
+
+
+if __name__ == "__main__":
+    medico_1 = Medico()
+    medico_2 = Medico()
+    medico_3 = Medico()
+    paciente_1 = Paciente()
+    paciente_2 = Paciente()
+    paciente_3 = Paciente()
+
+    # paciente_1.agregar_medico(medico_1)
+    medico_1.agregar_paciente(paciente_1)
+
+    print(medico_1.__dict__)
+    # print(medico_2.__dict__)
+    print(paciente_1.__dict__)
+    # print(paciente_2.__dict__)

@@ -7,6 +7,8 @@ class Encriptador:
         self.__clave = None
         self.set_clave(p_nueva_clave)
 
+        self.__algoritmo_de_encirptacion = "sustitución"
+
         Encriptador.cantidad_de_objetos += 1
 
         # ejemplo
@@ -63,58 +65,8 @@ class Encriptador:
     def devolver_mi_identidad(self):
         return hex(id(self))
     
+    def __metodo_privdo(self):
+        pass
 
-encriptador_1 = Encriptador()
-
-# print("encriptador_1:", encriptador_1)
-
-# print("encriptador_1.atributo_publico:", encriptador_1.atributo_publico)
-
-# print(encriptador_1.get_clave())
-
-# # contrasenia_incorrecta = True
-# # while contrasenia_incorrecta:
-# try:
-#     encriptador_1.set_clave("otraclave")
-#     # contrasenia_incorrecta = False
-# except Exception as error:
-#     print("error:", error)
-
-# print(encriptador_1.get_clave())
-
-
-# # verificación de indentidad con self
-# print("identidad del objeto:", hex(id(encriptador_1)))
-# print("identidad del objeto:", encriptador_1.devolver_mi_identidad())
-
-encriptador_2 = Encriptador("una clave re dificil")
-# print("identidad del objeto 2:", hex(id(encriptador_2)))
-# print("identidad del objeto 2:", encriptador_2.devolver_mi_identidad())
-
-mensaje = "hola y bienvenidos"
-
-mensaje_encriptado = encriptador_1.encriptar(mensaje)
-
-print("mensaje_encriptado:", mensaje_encriptado)
-
-mensaje_desencriptado = encriptador_1.desencriptar(mensaje_encriptado)
-
-print("mensaje_desencriptado:", mensaje_desencriptado)
-
-# print(chr(97))
-# print(ord("a"))
-
-encriptador_2.clave = "otra clave re dificil"
-print(encriptador_2.clave)
-
-# Atributo de clase
-print("Encriptador.cantidad_de_objetos:", Encriptador.cantidad_de_objetos)
-
-encriptadores = [Encriptador() for _ in range(10)]
-
-print("Encriptador.cantidad_de_objetos:", Encriptador.cantidad_de_objetos)
-
-del encriptador_1
-del encriptador_2
-
-print("Encriptador.cantidad_de_objetos:", Encriptador.cantidad_de_objetos)
+    def __str__(self):
+        return f"Encriptador (algoritmo: {self.__algoritmo_de_encirptacion})"

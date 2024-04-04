@@ -1,1 +1,0 @@
-# Aquí colocaremos la clase Encriptador en la próxima teoría
