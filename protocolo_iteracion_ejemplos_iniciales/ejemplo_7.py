@@ -9,17 +9,17 @@ Created on Wed Oct 12 23:31:09 2022
     
 class Individuo:
     def __init__(self, codigo): 
-        self.codigo = codigo
+        self.__codigo = codigo
     
     def __str__(self): 
-        return "Individuo: " + self.codigo
+        return "Individuo: " + self.__codigo
         
 class Poblacion:
     def __init__(self):
-        self.individuos = [Individuo('A'), Individuo('B'), Individuo('C')]
+        self.__individuos = [Individuo('A'), Individuo('B'), Individuo('C')]
         
     def __iter__(self):
-        return (x for x in self.individuos)
+        return (x for x in self.__individuos)
 
 
 poblacion = Poblacion()
