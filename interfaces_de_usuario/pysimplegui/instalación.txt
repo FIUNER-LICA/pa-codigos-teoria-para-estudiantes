@@ -1,0 +1,2 @@
+# para instalar (https://www.pysimplegui.org/en/latest/):
+pip install pysimplegui
