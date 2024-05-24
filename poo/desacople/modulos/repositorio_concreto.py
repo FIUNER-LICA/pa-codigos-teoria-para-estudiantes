@@ -26,12 +26,9 @@ class RepositorioSQL(Repositorio):
             if modelo_libro is None:
                 raise ValueError("No se encuentra un libro con el ID proporcionado")
             
-            # Se mapea un ModeloLibro a un Libro
-            id = int(modelo_libro.id)
-            nombre = str(modelo_libro.nombre)
-            autor = str(modelo_libro.autor)
-            calif = float(modelo_libro.calificacion)
-            libro = Libro(id, nombre, autor, calif)
+            # Se mapea un ModeloLibro a un Libro           
+            libro = self.__convertir_ModeloLibro_a_Libro(modelo_libro)
+            
             # Se retorna el Libro
             return libro
         return None
@@ -96,11 +93,7 @@ class RepositorioSQL(Repositorio):
             ml = modelos_libros[0]
             for modelo_libro in modelos_libros:        
                 # convertir cada objeto ModeloLibro en Libro
-                id = int(modelo_libro.id)
-                nombre = str(modelo_libro.nombre)
-                autor = str(modelo_libro.autor)
-                calif = float(modelo_libro.calificacion)
-                libro = Libro(id, nombre, autor, calif)
+                libro = self.__convertir_ModeloLibro_a_Libro(modelo_libro)
                 # añadir cada libro a la lista de libros
                 lista_de_libros.append(libro)
 
@@ -113,6 +106,14 @@ class RepositorioSQL(Repositorio):
         modelo_libro.autor = libro.get_autor()
         modelo_libro.calificacion = libro.get_puntaje()
         return modelo_libro
+    
+    def __convertir_ModeloLibro_a_Libro(self, modelo_libro: ModeloLibro) -> Libro:
+        id = int(modelo_libro.id)
+        nombre = str(modelo_libro.nombre)
+        autor = str(modelo_libro.autor)
+        puntaje = float(modelo_libro.calificacion)
+        libro = Libro(id, nombre, autor, puntaje)
+        return libro
         
         
 class RepositorioCSV(Repositorio):
