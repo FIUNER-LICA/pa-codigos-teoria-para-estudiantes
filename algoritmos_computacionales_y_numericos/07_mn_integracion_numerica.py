@@ -2,12 +2,21 @@ import math
 import random
 
 def trapz(li, ls, h, funcion):
+    """Calcula la integral de una función utilizando el método del trapecio."""	
     I = funcion(li) + funcion(ls)
     i = li + h
     while i < ls:
         I += 2 * funcion(i)
         i += h
     return I * h / 2
+
+# def trapz(arr, h):
+# """Calcula la integral de una función utilizando el método del trapecio.	"""
+#     I = arr[0] + arr[-1]
+#     for i in range(1, len(arr) - 1):
+#         I += 2 * arr[i]
+#     return I * h / 2
+
 
 def simpson(li, ls, h, funcion):
     I = funcion(li) + funcion(ls)
@@ -32,7 +41,7 @@ def main():
     funcion = math.sin
     print("-----------------------------------------------------------")
     print("Comparación de la integral de la función seno [0, pi]")
-    print("utilizando cuatro métodos distintos.")
+    print("utilizando tres métodos distintos.")
     print("------------------------------------------------------------")
     print("Limite inf.: ", Li)
     print("Limite sup.: ", Ls)
