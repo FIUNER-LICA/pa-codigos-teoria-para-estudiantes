@@ -1,5 +1,6 @@
 from POO.encriptador.encriptador import Encriptador
 
+
 encriptador_1 = Encriptador()
 
 print("encriptador_1:", encriptador_1)
