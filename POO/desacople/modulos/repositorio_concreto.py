@@ -20,7 +20,7 @@ class RepositorioSQL(Repositorio):
         tabla_libro.metadata.create_all(self.__engine) # Crea la tabla utilizando el motor de la BD
 
     def leer_libro(self, id: int) -> Libro:
-        with Session(crear_engine()) as session:
+        with Session(self.__engine) as session:
             modelo_libro = session.query(ModeloLibro).filter_by(id=id).first() # Equivale a: modelos_libros = ModeloLibro.query.all()
             
             if modelo_libro is None:
@@ -88,7 +88,7 @@ class RepositorioSQL(Repositorio):
     def get_lista_libros(self):
         lista_de_libros = []
         # levantar todos los libros de la BD
-        with Session(crear_engine()) as session:
+        with Session(self.__engine) as session:
             modelos_libros = session.query(ModeloLibro).all() # Equivale a: modelos_libros = ModeloLibro.query.all()
             ml = modelos_libros[0]
             for modelo_libro in modelos_libros:        
