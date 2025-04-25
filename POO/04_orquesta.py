@@ -20,32 +20,36 @@ class Afinable(Instrumento):
         pass
 
 
-class Piano(Afinable):
+class Piano(Instrumento):
     def ejecutar_nota(self):
         a = 3
         print("Ejecutar nota piano")
 
-    def afinar(self):
-        print("Se afina el piano")
+    
 
 
-class Violin(Afinable):
+class Violin(Instrumento):
     def ejecutar_nota(self):
         c = 7
         v = 5*c
         print("Ejecutar nota violin")
         
-    def afinar(self):
-        g = 0
-        print("Se afina el violin")
-
+    
 
 class Flauta(Instrumento):
     def ejecutar_nota(self):
         c = 7
         v = c**3
         print("Ejecutar nota flauta")
+
+class Guitarra:
+    def ejecutar_nota(self):
+        c = 7
+        v = c**3
+        print("Ejecutar nota guitarra")
         
+    def afinar(self):
+        print("Afinando guitarra")      
 
 class Orquesta:
     def __init__(self):
@@ -56,7 +60,10 @@ class Orquesta:
         
     def ejecutar_obra(self):
         for instrumento in self.__instrumentos:
-            instrumento.ejecutar_nota()
+            if issubclass(type(instrumento), Instrumento):
+                instrumento.ejecutar_nota()
+            else:
+                raise TypeError(f"El objeto {instrumento} no es un instrumento válido")
             
     def afinar_instrumentos(self):
         for instrumento in self.__instrumentos:
@@ -74,12 +81,13 @@ if __name__ == "__main__":
     # orquesta.agregar_instrumento(otra_flauta)
     orquesta.agregar_instrumento(Piano())
     orquesta.agregar_instrumento(Violin())
+    orquesta.agregar_instrumento(Guitarra())
     orquesta.agregar_instrumento(Flauta())
     
     # orquesta.agregar_instrumento("trompeta")  # Línea con un error: ¿Por qué?
 
-    orquesta.afinar_instrumentos()
-    print()
+    #orquesta.afinar_instrumentos()
+    #print()
     orquesta.ejecutar_obra()
     
     # del orquesta  # se elimina objeto orquesta
