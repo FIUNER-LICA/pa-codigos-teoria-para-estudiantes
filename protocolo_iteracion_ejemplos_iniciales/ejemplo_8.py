@@ -16,10 +16,10 @@ class Individuo:
         
 class Poblacion(list):
     def __init__(self):
-        self.individuos = [Individuo('A'), Individuo('B'), Individuo('C')]
+        self.__individuos = [Individuo('A'), Individuo('B'), Individuo('C')]
         
     def __iter__(self):
-        for x in self.individuos:
+        for x in self.__individuos:
             yield x
 
 
