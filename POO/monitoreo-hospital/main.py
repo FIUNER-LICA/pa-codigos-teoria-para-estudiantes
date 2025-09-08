@@ -1,6 +1,5 @@
 import paho.mqtt.client as mqtt # pip install paho-mqtt
 import time
-
 # Configuración del broker
 BROKER = "lica.ingenieria.uner.edu.ar"     # dirección del broker
 PORT = 1883   
@@ -8,7 +7,8 @@ USERNAME = "estudiante"
 PASSWORD = "fiuner"
 TOPIC_ROOT = "appsestudiantes/monitoreohospital/"
 # Lista de tópicos a suscribirse
-TOPICS = [(TOPIC_ROOT + "quirófano/temperatura", 0)] #, ("salacirugia01/humedad", 0), ("salacirugia01/presion", 0)]
+TOPICS = [#(TOPIC_ROOT + "quirófano/temperatura", 0),
+          (TOPIC_ROOT +  "#",0)] #, ("salacirugia01/humedad", 0), ("salacirugia01/presion", 0)]
 
 # --- Callbacks ---
 def on_connect(client, userdata, flags, rc):
@@ -22,6 +22,7 @@ def on_connect(client, userdata, flags, rc):
         print(f"❌ Error al conectar. Código: {rc}")
 
 def on_message(client, userdata, msg):
+    
     print(f"📥 Mensaje recibido en {msg.topic}: {msg.payload.decode('utf-8')}")
 
 def on_disconnect(client, userdata, rc):
